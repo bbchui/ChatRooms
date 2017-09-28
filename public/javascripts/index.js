@@ -1,3 +1,8 @@
-const io = require('socket.io-client');
+document.addEventListener('DOMContentLoaded', () => {
+  const io = require('socket.io-client');
+  const chatUI = require('./chatUI')
 
-console.log(io);
+
+  window.chat = new chatUI(io)
+
+})
