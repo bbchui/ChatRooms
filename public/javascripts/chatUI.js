@@ -23,4 +23,32 @@ ChatUI.prototype.addMsg = function(msg) {
   this.msgList.appendChild(newMsg)
 }
 
+ChatUI.prototype.addRoom = function (room) {
+  const newRoom = document.createElement('li')
+  newRoom.textContent = room
+  this.roomList.appendChild(newRoom)
+}
+
+ChatUI.prototype.submitHandler = function () {
+  this.form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    this.processUserInput()
+    this.input.value = ''
+  })
+}
+
+ChatUI.prototype.processUserInput = function () {
+  const msg = this.getInput()
+  let response
+  if (msg[0] === '/') {
+    response = this.chat.processCommand(msg)
+    if (response) {
+      this.addMsg(response)
+    }
+  } else {
+    this.sendMsg(this.room.textContent)
+    this.addMsg(msg)
+  }
+}
+
 module.exports = ChatUI
