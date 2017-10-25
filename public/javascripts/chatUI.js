@@ -7,14 +7,19 @@ function ChatUI(socket) {
   this.msgList = document.querySelector('#msg-list')
   this.roomList = document.querySelector('#room-list')
   this.input = document.querySelector('input')
+  this.submitHandler();
 }
 
 ChatUI.prototype.getInput = function() {
   return this.input.value
 }
 
-ChatUI.prototype.sendMsg = function(room) {
-  this.chat.sendMessage(room, this.getInput())
+ChatUI.prototype.setRoom = function (room) {
+  this.room.textContent = room
+}
+
+ChatUI.prototype.sendMsg = function() {
+  this.chat.sendMessage(this.getInput())
 }
 
 ChatUI.prototype.addMsg = function(msg) {
@@ -32,7 +37,9 @@ ChatUI.prototype.addRoom = function (room) {
 ChatUI.prototype.submitHandler = function () {
   this.form.addEventListener('submit', (e) => {
     e.preventDefault()
-    this.processUserInput()
+    // this.processUserInput()
+    this.sendMsg(this.room.textContent)
+    this.addMsg(this.getInput())
     this.input.value = ''
   })
 }

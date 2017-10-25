@@ -14,8 +14,8 @@ function Chat (socket) {
   this.socket = socket
 }
 
-Chat.prototype.sendMessage = function (room, msg) {
-  this.socket.emit('message', {text: msg, room})
+Chat.prototype.sendMessage = function (msg) {
+  this.socket.emit('message', {text: msg})
 }
 
 Chat.prototype.changeRoom = function (room) {
