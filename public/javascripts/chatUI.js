@@ -18,8 +18,8 @@ ChatUI.prototype.setRoom = function (room) {
   this.room.textContent = room
 }
 
-ChatUI.prototype.sendMsg = function() {
-  this.chat.sendMessage(this.getInput())
+ChatUI.prototype.sendMsg = function(room) {
+  this.chat.sendMessage(room, this.getInput())
 }
 
 ChatUI.prototype.addMsg = function(msg) {
@@ -37,9 +37,7 @@ ChatUI.prototype.addRoom = function (room) {
 ChatUI.prototype.submitHandler = function () {
   this.form.addEventListener('submit', (e) => {
     e.preventDefault()
-    // this.processUserInput()
-    this.sendMsg(this.room.textContent)
-    this.addMsg(this.getInput())
+    this.processUserInput()
     this.input.value = ''
   })
 }
@@ -53,7 +51,7 @@ ChatUI.prototype.processUserInput = function () {
       this.addMsg(response)
     }
   } else {
-    this.sendMsg(this.room.textContent)
+    this.sendMsg(this.room, this.room.textContent)
     this.addMsg(msg)
   }
 }
