@@ -51,7 +51,7 @@ ChatUI.prototype.processUserInput = function () {
       this.addMsg(response)
     }
   } else {
-    this.sendMsg(this.room, this.room.textContent)
+    this.sendMsg(this.room.textContent)
     this.addMsg(msg)
   }
 }

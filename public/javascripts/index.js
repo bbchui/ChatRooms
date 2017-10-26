@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     myChat.addMsg(message.text)
   })
 
+  socket.on('joinResult', (result) => {
+    myChat.setRoom(result.room)
+    myChat.addMsg('Room changed')
+  })
+
   socket.on('nameResult', (result) => {
     let msg
     if (result.success) {

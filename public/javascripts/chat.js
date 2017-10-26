@@ -7,12 +7,21 @@ class Chat {
     this.socket.emit('message', {text: msg, room})
   }
 
+  changeRoom(room) {
+    this.socket.emit('join', {newRoom: room})
+  }
+
   processCommand(command) {
     const words = command.split(' ')
     const cmd = words[0].split('/')[1]
     let msg = false
 
     switch (cmd) {
+      case 'join':
+        words.shift()
+        const room = words.join(' ')
+        this.changeRoom(room)
+        break
       case 'nick':
         words.shift()
         const name = words.join(' ')
