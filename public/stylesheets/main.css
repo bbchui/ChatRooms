@@ -1,0 +1,25 @@
+body, h1, h2, h3, p, div, nav, ul, li {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: inherit;
+  color: inherit;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #e6e6e6;
+  font-size: 2em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/*.active-room {
+  border: 1px solid black;
+}*/
