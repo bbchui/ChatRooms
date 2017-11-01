@@ -9,17 +9,18 @@ body, h1, h2, h3, p, div, nav, ul, li {
 
 h1 {
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   width: 100%;
-  background: #e6e6e6;
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 10px;
+  /*background: #e6e6e6;*/
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  /*border-bottom: 1px solid #e6e6e6;*/
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #404040;
 }
-
-/*.active-room {
-  border: 1px solid black;
-}*/
 
 .first-section {
   display: flex;
@@ -48,4 +49,27 @@ ul.rooms {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 16px;
+}
+
+div.room-chat {
+  width: 100%;
+}
+
+h2 {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #e6e6e6;
+   line-height: 6px;
+   margin: 10px 0 20px;
+}
+
+h2 span {
+    background: white;
+    padding:0 5px;
+    font-size: 16px;
+    color:
+}
+
+ul.messages {
+  margin-left: 10px;
 }

@@ -7,6 +7,7 @@ function ChatUI(socket) {
   this.msgList = document.querySelector('#msg-list')
   this.roomList = document.querySelector('#room-list')
   this.input = document.querySelector('input')
+  this.users = document.querySelector('#users')
   this.submitHandler();
 }
 
@@ -22,7 +23,7 @@ ChatUI.prototype.sendMsg = function(room) {
   this.chat.sendMessage(room, this.getInput())
 }
 
-ChatUI.prototype.addMsg = function(msg) {
+ChatUI.prototype.addMsg = function(msg, name) {
   const newMsg = document.createElement('li')
   newMsg.textContent = msg
   this.msgList.appendChild(newMsg)
@@ -32,6 +33,12 @@ ChatUI.prototype.addRoom = function (room) {
   const newRoom = document.createElement('li')
   newRoom.textContent = room
   this.roomList.appendChild(newRoom)
+}
+
+ChatUI.prototype.addUser = function (user) {
+  const newUser = document.createElement('li')
+  newUser.textContent = user
+  this.users.appendChild(newUser)
 }
 
 ChatUI.prototype.submitHandler = function () {

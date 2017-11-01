@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   socket.on('message', (message) => {
     myChat.addMsg(message.text)
+
   })
 
   socket.on('joinResult', (result) => {
     myChat.setRoom(result.room)
-    myChat.addMsg('Room changed')
+    myChat.addMsg(`Entered ${result.room}`)
   })
 
   socket.on('nameResult', (result) => {
@@ -34,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         myChat.input.focus()
       })
     })
+  })
+
+  socket.on('users', (users) => {
+    myChat.users.innerHTML = ''
+    users.forEach(user => myChat.addUser(user))
   })
 
   setInterval(() => { // review

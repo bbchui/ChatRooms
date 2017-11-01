@@ -7,14 +7,18 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   </head>
   <body>
+    <div id="username"></div>
     <section class="first-section">
       <div class="chat-rooms">
         <h3 class="room-list-header">Chat Rooms</h3>
         <ul id="room-list" class="rooms"></ul>
+        <br>
+        <h3 class="room-list-header">Active Users</h3>
+        <ul id="users"></ul>
       </div>
       <div class="room-chat">
         <h1>Just Chat!</h1>
-        <h3 id="room" class="active-room"></h3>
+        <h2 class="active-room"><span id="room"><span></h2>
         <ul id="msg-list" class="messages"></ul>
         <form>
           <input type="text" placeholder="write something" />
