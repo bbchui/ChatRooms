@@ -7,6 +7,14 @@ body, h1, h2, h3, p, div, nav, ul, li {
   list-style: none;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
 h1 {
   display: flex;
   /*justify-content: center;*/
@@ -16,7 +24,9 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   /*border-bottom: 1px solid #e6e6e6;*/
-  height: 30px;
+  height: 10vh
+  min-height: 30px;
+
   padding-left: 10px;
   padding-top: 10px;
   color: #404040;
@@ -30,14 +40,14 @@ h1 {
 div.chat-rooms {
   width: 150px;
   border-right: 1px solid black;
-  height: 900px;
+  height: 100vh;
   background-color: #4f3a4c;
   color: #e3e3e3;
 }
 
 h3.room-list-header {
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -53,6 +63,8 @@ ul.rooms {
 
 div.room-chat {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -70,6 +82,60 @@ h2 span {
     color:
 }
 
-ul.messages {
+ul.users {
   margin-left: 10px;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+div.message-box {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+
+ul.messages {
+  padding-left: 10px;
+  height: 85vh;
+  border-bottom: 1px solid #e6e6e6;
+  overflow-y: scroll;
+}
+
+form {
+  height: 5vh;
+  padding: 10px 0 10px 10px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  display: flex;
+}
+
+input.message-input {
+  width: 95%;
+  height: 19px;
+  /*max-height: 90%;*/
+  /*text-wrap: normal;*/
+  outline: none;
+  font-size: 15px;
+  padding-top: 10px;
+  /*margin-left: 10px;*/
+  resize: none;
+  border: 2px solid #bcbcbe;
+  border-radius: 5px;
+  word-break: break-word;
+  padding: 5px 10px;
+  color: #717274;
+}
+
+input.message-input::placeholder {
+  color: #bcbcbe;
+}
+
+
+
+input.message-input:focus {
+  border: 2px solid #717274;
+  color: #717274;
 }
