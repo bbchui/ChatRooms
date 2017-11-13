@@ -27,6 +27,7 @@ ChatUI.prototype.addMsg = function(msg, name) {
   const newMsg = document.createElement('li')
   newMsg.textContent = msg
   this.msgList.appendChild(newMsg)
+  this.msgList.scrollTop += this.msgList.scrollHeight;
 }
 
 ChatUI.prototype.addRoom = function (room) {
