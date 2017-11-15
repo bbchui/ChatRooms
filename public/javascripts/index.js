@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const myChat = new ChatUI(socket)
 
   // console.log(socket)
-  window.chat = new ChatUI(socket)
+  // window.chat = new ChatUI(socket)
+  //what you see in your room when another person inputs something.
 
   socket.on('message', (message) => {
     myChat.addMsg(message.text)
@@ -40,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
   socket.on('users', (users) => {
     myChat.users.innerHTML = ''
     users.forEach(user => myChat.addUser(user))
+  })
+
+  socket.on('user', (user) => {
+    myChat.mainUser(user);
   })
 
   setInterval(() => { // review
